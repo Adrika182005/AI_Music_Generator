@@ -1,0 +1,10 @@
+[
+  {"question":"How do I reset my password?","answer":"You can reset your password from the sign-in page. Choose ‘Forgot password?’ and we’ll email you a secure reset link. If it doesn’t arrive in a few minutes, check your spam folder."},
+  {"question":"How can I contact customer support?","answer":"Our support team is happy to help. Email support@example.com and we’ll get back to you within one business day."},
+  {"question":"Can I change or cancel my plan?","answer":"Yes. Open Settings, then Billing to update your plan or cancel. Your current access stays active through the end of your billing period."},
+  {"question":"How do I update my email address?","answer":"Go to Settings → Account and choose ‘Edit email’. We’ll send a confirmation link to your new address before applying the change."},
+  {"question":"Do you offer a free trial?","answer":"Yes, new customers can try the service free for 14 days. You can explore the features during your trial, and you can cancel any time."},
+  {"question":"Where can I find my invoices?","answer":"Your invoices are in Settings → Billing → Invoice history. You can view or download a PDF for each payment."},
+  {"question":"Is my account information secure?","answer":"We use encryption to protect your information and never sell your personal data. You can read more in our Privacy Policy."},
+  {"question":"How do I get started?","answer":"Welcome! Create an account with your email, then follow the quick setup steps in your dashboard. It only takes a couple of minutes."}
+]

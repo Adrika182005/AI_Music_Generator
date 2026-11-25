@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>FAQ assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Answerly home"><span class="brand-mark">✳</span><span>answerly</span></a>
+      <div class="top-note"><span class="status-dot"></span> Your friendly help desk</div>
+      <button class="manage-link" id="manage-open" type="button"><span aria-hidden="true">⚙</span> Manage FAQs <span class="count-pill" id="faq-count">0</span></button>
+    </header>
+
+    <section class="workspace">
+      <aside class="intro">
+        <div class="eyebrow"><span class="sparkle">✳</span> HERE TO HELP</div>
+        <h1>Good questions<br>deserve <em>good answers.</em></h1>
+        <p class="intro-copy">Ask me anything about getting started, your account, or your plan. I’ll point you in the right direction.</p>
+        <div class="side-card">
+          <div class="side-card-icon">✦</div>
+          <div><strong>A little tip</strong><p>Try asking in your own words. I’ll find the closest answer.</p></div>
+        </div>
+        <div class="side-footer"><span class="mini-avatars"><i>J</i><i>M</i><i>A</i></span><span>Here for you, anytime</span></div>
+      </aside>
+
+      <section class="chat-card" aria-label="FAQ chat">
+        <div class="chat-header">
+          <div class="bot-avatar"><span>✳</span><b class="avatar-online"></b></div>
+          <div class="bot-heading"><strong>Answerly assistant</strong><span><i></i> Online · Usually replies instantly</span></div>
+          <button class="more-button" type="button" aria-label="Chat options">•••</button>
+        </div>
+        <div class="chat-scroll" id="chat-scroll">
+          <div class="date-divider"><span></span><small>TODAY</small><span></span></div>
+          <div class="message-row bot-row">
+            <div class="tiny-avatar">✳</div>
+            <div class="message-wrap"><div class="bubble bot-bubble">Hi there! 👋 I’m here to help with any questions you have. What can I help you with today?<span class="message-time">Just now</span></div></div>
+          </div>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="composer-area">
+          <form id="chat-form" class="composer">
+            <input id="question-input" type="text" autocomplete="off" placeholder="Type your question here…" aria-label="Your question" maxlength="500">
+            <button class="send-button" type="submit">Send <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="composer-foot"><span>Powered by a little bit of smart matching <span class="foot-sparkle">✦</span></span><span><kbd>↵</kbd> to send</span></div>
+        </div>
+      </section>
+    </section>
+    <footer class="page-footer">A little help goes a long way <span>✳</span></footer>
+  </main>
+
+  <dialog id="faq-dialog" class="faq-dialog">
+    <div class="dialog-head"><div><div class="eyebrow">YOUR KNOWLEDGE BASE</div><h2>Manage FAQs</h2></div><button type="button" class="close-button" id="manage-close" aria-label="Close">×</button></div>
+    <p class="dialog-copy">Add and edit the answers your assistant can share. Changes are saved in this browser.</p>
+    <div class="threshold-card"><div><strong>Match threshold</strong><span>Higher means a closer match is needed</span></div><label class="range-value" for="threshold"> <output id="threshold-value">0.12</output></label><input id="threshold" type="range" min="0.03" max="0.65" step="0.01" value="0.12"></div>
+    <div class="faq-list-head"><strong>Your questions <span id="list-count"></span></strong><button class="text-button" id="reset-faqs" type="button">Restore sample FAQs</button></div>
+    <div id="faq-list" class="faq-list"></div>
+    <form id="faq-form" class="faq-form">
+      <h3 id="form-title">Add a new FAQ</h3>
+      <input id="faq-question" type="text" placeholder="Question (e.g. How do I reset my password?)" maxlength="180" required>
+      <textarea id="faq-answer" placeholder="Answer" rows="3" maxlength="800" required></textarea>
+      <div class="form-actions"><button id="cancel-edit" class="cancel-button" type="button" hidden>Cancel edit</button><button class="save-button" type="submit"><span id="save-label">Add FAQ</span> <span>＋</span></button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
